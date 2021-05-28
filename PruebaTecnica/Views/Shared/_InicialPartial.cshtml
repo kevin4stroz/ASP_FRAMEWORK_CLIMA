@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/Login/css")
+
+</head>
+<body>
+    <div class="container">
+        
+            @RenderBody()
+
+        <div class="alert alert-info" role="alert">
+            <h2>Prueba tecnica</h2>
+
+            <span>
+                Esta prueba tecnica es realizada por Kevin David Quiroga Astroz.
+                Tiene como objetivo mostrar los conocimientos que se requieren para el perfil.
+            </span>
+        </div>
+    </div><!-- /.container -->
+    <div id="particles-js"></div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/Login/js")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

@@ -1,8 +1,3 @@
-# ASP_FRAMEWORK_CLIMA
-
-## Base de datos
-
-```sql
 --  CREACION DE LA TABLA
 create table Clima(
 	ClimaId int PRIMARY KEY IDENTITY(1, 1) NOT NULL,
@@ -16,7 +11,7 @@ create table Clima(
 
 -- AGREGAR CAMPO CALCULADO PARA EL TIEMPO ATMOSFERICO
 ALTER TABLE Clima
-ADD TiempoAtmosfï¿½rico as (Temperatura + Trecipitaciones + FechaCreacion);
+ADD TiempoAtmosférico as (Temperatura + Trecipitaciones + FechaCreacion);
 
 
 INSERT INTO [dbo].[Clima]
@@ -47,36 +42,5 @@ INSERT INTO [dbo].[Clima]
            ,15
            ,GETDATE())
 
-```
 
-## login
 
-![imagen](img/login.png)
-
-## login validaciones
-
-![imagen](img/2.png)
-
-## registro
-
-![imagen](img/registro.png)
-
-## listar
-
-![imagen](img/listar.png)
-
-## crear
-
-![imagen](img/creacionclima.png)
-
-## modificar 
-
-![imagen](img/modificacion.png)
-
-## eliminar
-
-![imagen](img/eliminar.png)
-
-# NOTA
-
-No pude terminar todas las validaciones de los inputs pero se como implementarlas. 

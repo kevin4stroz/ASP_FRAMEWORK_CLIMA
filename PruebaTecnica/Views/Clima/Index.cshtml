@@ -1,0 +1,48 @@
+﻿@using PruebaTecnica.Datos; 
+@{
+    ViewBag.Title = "Clima lista";
+    Layout = "~/Views/Shared/_Pagina.cshtml";
+}
+
+<h2>Lista Clima</h2>
+
+<div class="btn-toolbar" style="margin-bottom:10px">
+    <a href="@Url.Action("SetClima", "Clima")" class="btn btn-success">Agregar clima</a>
+</div>
+<div class="well">
+    <table class="table">
+        <thead class="thead-dark" style="background-color: rgba(0, 123, 255, 0.5); color : white;">
+            <tr>
+                <th>#</th>
+                <th>Localidad</th>
+                <th>Tiempo Atmosférico</th>
+                <th>Temperatura</th>
+                <th>Trecipitaciones</th>
+                <th>Viento</th>
+                <th>FechaCreacion</th>
+                <th colspan="2">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Clima item in ViewBag.ListaClimas)
+            {
+            <tr>
+                <th>@item.ClimaId</th>
+                <th>@item.Localidad</th>
+                <th>@item.TiempoAtmosférico</th>
+                <th>@item.Temperatura</th>
+                <th>@item.Trecipitaciones</th>
+                <th>@item.Viento</th>
+                <th>@item.FechaCreacion</th>
+                <td colspan="2">
+                    <a href="@Url.Action("SetClima", "Clima", new { id = @item.ClimaId })" class="btn btn-warning">Modificar</a>
+                    <a href="@Url.Action("EliminarClima", "Clima", new { id = @item.ClimaId })" onclick="return confirm('Desea borrar el registro?')" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+
+
